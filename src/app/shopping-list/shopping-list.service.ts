@@ -5,10 +5,7 @@ export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredient[]>();
   startEditing = new Subject<number>();
 
-  private ingredients: Ingredient[] = [
-    new Ingredient('Applies', 5),
-    new Ingredient('Tomatoes', 10)
-  ];
+  private ingredients: Ingredient[] = [];
 
   getIngredients() {
     return this.ingredients.slice();
