@@ -5,8 +5,8 @@ import {HttpClient, HttpRequest} from '@angular/common/http';
 import {Store} from '@ngrx/store';
 
 import {Recipe} from '../recipe.model';
-import * as RecipeActions from '../store/recipe.actions';
-import * as fromRecipe from '../store/recipe.reducer';
+import * as RecipeActions from './recipe.actions';
+import * as fromRecipe from './recipe.reducer';
 
 @Injectable()
 export class RecipeEffects {
