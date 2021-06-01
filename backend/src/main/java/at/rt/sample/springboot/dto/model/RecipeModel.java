@@ -2,7 +2,6 @@ package at.rt.sample.springboot.dto.model;
 
 import at.rt.sample.springboot.dto.model.base.BaseModel;
 import at.rt.sample.springboot.models.Recipe;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

@@ -1,8 +1,10 @@
 package at.rt.sample.springboot.service.api;
 
-import at.rt.sample.springboot.models.Ingredient;
+import at.rt.sample.springboot.dto.model.IngredientModel;
+import at.rt.sample.springboot.dto.model.RecipeModel;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -13,33 +15,8 @@ import java.util.Optional;
  */
 public interface IIngredientsService {
 
-    /**
-     * Liefert die Liste aller Ingredients, sortiert nach der Bezeichnung.
-     *
-     * @return Liste von Recipies
-     */
-    List<Ingredient> listIngredients();
-
-    /**
-     * Sucht eine Ingredient anhand der ID.
-     *
-     * @param id ID der Ingredient
-     * @return gefundene Ingredient
-     */
-    Optional<Ingredient> getIngredientById(Long id);
-
-    /**
-     * Speichert eine Ingredient.
-     *
-     * @param ingredient Zu speichernde Ingredient
-     * @return gespeicherte Ingredient
-     */
-    Ingredient saveRecipie(Ingredient ingredient);
-
-    /**
-     * Löscht eine Ingredient anhand der ID.
-     *
-     * @param id ID der Ingredient
-     */
-    void deleteIngredient(Long id);
+    IngredientModel findById(Long id);
+    Page<IngredientModel> findAll(Pageable pageable, Optional<String> filter);
+    IngredientModel createIngredient(IngredientModel ingredientModel);
+    void deleteIngredient(IngredientModel ingredientModel);
 }

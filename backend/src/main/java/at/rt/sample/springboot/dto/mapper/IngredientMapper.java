@@ -3,7 +3,6 @@ package at.rt.sample.springboot.dto.mapper;
 import at.rt.sample.springboot.dto.mapper.base.BaseMapper;
 import at.rt.sample.springboot.dto.model.IngredientModel;
 import at.rt.sample.springboot.models.Ingredient;
-import at.rt.sample.springboot.models.Recipe;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
@@ -24,5 +23,5 @@ public interface IngredientMapper extends BaseMapper<IngredientModel, Ingredient
     IngredientModel entityToModel(Ingredient ingredient);
 
     @Override
-    void updateEntityFromModel(IngredientModel model, @MappingTarget Recipe entity);
+    void updateEntityFromModel(IngredientModel model, @MappingTarget Ingredient entity);
 }

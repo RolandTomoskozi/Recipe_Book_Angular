@@ -9,8 +9,6 @@ import java.io.Serializable;
  *
  * @param <ID> The Id Type of the Entity
  */
-@MappedSuperclass
-@EntityListeners()
 public abstract class BaseEntity<ID extends Serializable> implements Serializable, IBaseEntity<ID> {
 
     @Override

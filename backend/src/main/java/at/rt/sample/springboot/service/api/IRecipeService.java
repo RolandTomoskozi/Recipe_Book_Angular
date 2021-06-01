@@ -1,8 +1,9 @@
 package at.rt.sample.springboot.service.api;
 
-import at.rt.sample.springboot.models.Recipe;
+import at.rt.sample.springboot.dto.model.RecipeModel;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -13,33 +14,8 @@ import java.util.Optional;
  */
 public interface IRecipeService {
 
-    /**
-     * Liefert die Liste aller Recipes, sortiert nach der Bezeichnung.
-     *
-     * @return Liste von Recipes
-     */
-    List<Recipe> listRecipes();
-
-    /**
-     * Sucht eine Recipe anhand der ID
-     *
-     * @param id ID der Recipe
-     * @return gefundene Recipe
-     */
-    Optional<Recipe> getRecipeById(Long id);
-
-    /**
-     * Speichert eine Recipe.
-     *
-     * @param recipe Zu speichernde Recipe
-     * @return gespeicherte Recipe
-     */
-    Recipe saveRecipe(Recipe recipe);
-
-    /**
-     * Löscht eine Recipie anhand der ID.
-     *
-     * @param id ID der Recipie
-     */
-    void deleteRecipe(Long id);
+    RecipeModel findById(Long id);
+    Page<RecipeModel> findAll(Pageable pageable, Optional<String> filter);
+    RecipeModel createRecipe(RecipeModel recipeModel);
+    void deleteRecipe(RecipeModel recipeModel);
 }
