@@ -1,5 +1,6 @@
 package at.rt.sample.springboot.models;
 
+import at.rt.sample.springboot.models.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.validator.constraints.Length;
@@ -15,16 +16,18 @@ import java.util.Set;
  */
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "ingredient")
+@Table(name = "INGREDIENT")
 @Data
-public class Ingredient extends BaseEntity {
+public class Ingredient extends BaseEntity<Long> {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "SQX_INGREDIENT")
+    @SequenceGenerator(name = "SQX_INGREDIENT", sequenceName = "SQX_INGREDIENT")
     private Long id;
 
     @NotBlank
     @Length(min = 3, max = 20)
+    @Column(name = "INGREDIENT_NAME")
     private String name;
 
     @NotNull

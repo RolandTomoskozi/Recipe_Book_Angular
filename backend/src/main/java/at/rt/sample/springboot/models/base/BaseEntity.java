@@ -1,11 +1,17 @@
-package at.rt.sample.springboot.models;
+package at.rt.sample.springboot.models.base;
 
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
  * Basisklasse fuer alle Entities. Implementiert ID/HashCode anhand der ID und toString.
+ *
+ * @param <ID> The Id Type of the Entity
  */
-public abstract class BaseEntity implements Serializable, IBaseEntity {
+@MappedSuperclass
+@EntityListeners()
+public abstract class BaseEntity<ID extends Serializable> implements Serializable, IBaseEntity<ID> {
 
     @Override
     public String toString() {
@@ -14,7 +20,7 @@ public abstract class BaseEntity implements Serializable, IBaseEntity {
 
     @Override
     public int hashCode() {
-        Long id = getId();
+        ID id = getId();
 
         final int prime = 31;
         int result = 1;

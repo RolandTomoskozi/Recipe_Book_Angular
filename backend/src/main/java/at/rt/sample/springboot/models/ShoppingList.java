@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "shoppingList")
+@Table(name = "SHOPPINGLIST")
 @Data
 public class ShoppingList extends Ingredient {
 }
