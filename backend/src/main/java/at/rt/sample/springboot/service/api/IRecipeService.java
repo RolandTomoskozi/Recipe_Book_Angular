@@ -1,6 +1,7 @@
 package at.rt.sample.springboot.service.api;
 
 import at.rt.sample.springboot.dto.model.RecipeModel;
+import at.rt.sample.springboot.models.Recipe;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -17,5 +18,6 @@ public interface IRecipeService {
     RecipeModel findById(Long id);
     Page<RecipeModel> findAll(Pageable pageable, Optional<String> filter);
     RecipeModel createRecipe(RecipeModel recipeModel);
+    Recipe updateRecipe(Long id, RecipeModel recipeModel);
     void deleteRecipe(RecipeModel recipeModel);
 }

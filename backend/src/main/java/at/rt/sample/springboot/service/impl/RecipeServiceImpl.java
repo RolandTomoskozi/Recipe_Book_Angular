@@ -2,6 +2,7 @@ package at.rt.sample.springboot.service.impl;
 
 import at.rt.sample.springboot.dto.mapper.RecipeMapper;
 import at.rt.sample.springboot.dto.model.RecipeModel;
+import at.rt.sample.springboot.models.Recipe;
 import at.rt.sample.springboot.repo.RecipeRepository;
 import at.rt.sample.springboot.service.api.IRecipeService;
 import org.springframework.data.domain.Page;
@@ -44,6 +45,25 @@ public class RecipeServiceImpl implements IRecipeService {
     @Override
     public RecipeModel createRecipe(RecipeModel recipe) {
         return recipeMapper.entityToModel(recipeRepository.save(recipeMapper.modelToEntity(recipe)));
+    }
+
+    @Override
+    public Recipe updateRecipe(Long id, RecipeModel newRecipe) {
+        if (recipeRepository.findById(id).isPresent()) {
+            // find recipe
+            Recipe existingRecipe = recipeRepository.findById(id).get();
+
+            // update from parameters
+            existingRecipe.setName(newRecipe.getRecipe().getName());
+            existingRecipe.setImagePath(newRecipe.getRecipe().getImagePath());
+            existingRecipe.setDescription(newRecipe.getRecipe().getDescription());
+            existingRecipe.setIngredients(newRecipe.getRecipe().getIngredients());
+
+            // save and return updated recipe
+            return recipeRepository.save(existingRecipe);
+        } else {
+            return null;
+        }
     }
 
     @Transactional
