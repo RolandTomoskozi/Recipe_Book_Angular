@@ -1,7 +1,5 @@
 package at.rt.sample.springboot.models.base;
 
-import javax.persistence.EntityListeners;
-import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**

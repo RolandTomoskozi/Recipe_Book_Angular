@@ -1,3 +1,11 @@
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 3600
+  route:
+    authentication:
+      path: /api/auth
+      refresh: /api/refresh
 spring:
   h2:
     console:
@@ -11,3 +19,4 @@ spring:
   jpa:
     show-sql: true
     open-in-view: false
+
