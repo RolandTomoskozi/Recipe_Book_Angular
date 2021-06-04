@@ -1,4 +1,4 @@
-import * as AuthActions from './auth.actions';
+import * as AuthActions from '../actions/auth.actions';
 
 export interface State {
   token: string;

@@ -17,10 +17,7 @@
               "lodash",
               "rxjs/Rx",
               "rxjs-compat/add/operator/do",
-              "rxjs/add/operator/switchMap",
-              "firebase/app",
-              "firebase/auth",
-              "@firebase/app-check"
+              "rxjs/add/operator/switchMap"
             ],
             "outputPath": "dist/shoppingApp",
             "index": "src/index.html",

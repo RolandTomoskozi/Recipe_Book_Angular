@@ -3,7 +3,7 @@ import {NgForm} from '@angular/forms';
 import {Store} from '@ngrx/store';
 
 import * as fromApp from '../../store/app.reducers';
-import * as AuthActions from '../store/auth.actions';
+import * as AuthActions from '../actions/auth.actions';
 
 @Component({
   selector: 'app-signup',

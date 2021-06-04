@@ -4,8 +4,8 @@ import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {map, take} from 'rxjs/operators';
 
-import * as fromApp from '../store/app.reducers';
-import * as fromAuth from './store/auth.reducers';
+import * as fromApp from '../../store/app.reducers';
+import * as fromAuth from '../store/auth.reducers';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
