@@ -21,7 +21,7 @@ export class AuthService {
     return of({ name: 'User' });
   }
 
-  logout() {
+  logout(): Observable<boolean> {
     return of(true);
   }
 }

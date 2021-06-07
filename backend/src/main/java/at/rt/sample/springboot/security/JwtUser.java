@@ -1,7 +1,6 @@
 package at.rt.sample.springboot.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,6 +15,8 @@ import java.util.Objects;
  * Created on 02.06.2021
  */
 public class JwtUser implements UserDetails {
+
+    // TODO: refactoring with Lombok
 
     @JsonIgnore
     private Long id;

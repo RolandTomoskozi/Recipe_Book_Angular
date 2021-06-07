@@ -10,7 +10,7 @@ import {RecipeDetailComponent} from './recipe-detail/recipe-detail.component';
 import {RecipeItemComponent} from './recipe-list/recipe-item/recipe-item.component';
 import {RecipesRoutingModule} from './recipes-routing.module';
 import {EffectsModule} from '@ngrx/effects';
-import {SharedModule} from '../shared/shared.module';
+import {SharedModule} from '../../shared/shared.module';
 import {StoreModule} from '@ngrx/store';
 import {recipeReducer} from './store/recipe.reducer';
 import {RecipeEffects} from './store/recipe.effects';
