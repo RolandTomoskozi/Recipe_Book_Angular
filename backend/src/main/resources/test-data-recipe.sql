@@ -1,0 +1,2 @@
+-- INSERT INTO RECIPE(ID, NAME, DESCRIPTION, IMAGEPATH, INGREDIENTS)
+-- VALUES(SQX_RECIPE.nextval, 'Tasty Schnitzel', 'A super-tasty Schnitzel - just awesome!', 'https://pngimg.com/uploads/schnitzel/schnitzel_PNG7.png', ??)

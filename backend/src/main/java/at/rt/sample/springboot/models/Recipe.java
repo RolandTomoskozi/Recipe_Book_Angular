@@ -31,9 +31,11 @@ public class Recipe extends BaseEntity<Long> {
 
     @NotBlank
     @Length(min = 3, max = 200)
+    @Column(name = "DESCRIPTION")
     private String description;
 
     @NotBlank
+    @Column(name = "IMAGEPATH")
     private String imagePath;
 
     @ManyToMany

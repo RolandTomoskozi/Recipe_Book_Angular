@@ -22,6 +22,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
 /**
+ * Expose a POST API /authenticate using the AuthenticationController. The POST API gets username and password in
+ * the body- Using Spring Authentication Manager we authenticate the username and password. If the credentials are
+ * valid, a JWT token is created using the JWTTokenUtil and provided to the client.
+ *
  * @author Roland Tömösközi (roland.toemoeskoezi@activesolution.at)
  * Created on 02.06.2021
  */

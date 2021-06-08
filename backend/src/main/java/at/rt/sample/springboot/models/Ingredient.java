@@ -31,6 +31,7 @@ public class Ingredient extends BaseEntity<Long> {
     private String name;
 
     @NotNull
+    @Column(name = "AMOUNT")
     private int amount;
 
     @ManyToMany(mappedBy = "ingredients")

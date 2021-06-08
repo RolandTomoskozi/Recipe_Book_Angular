@@ -24,9 +24,16 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+/**
+ * This class extends the WebSecurityConfigurerAdapter is a convenience class that allows customization to both
+ * WebSecurity and HttpSecurity.
+ *
+ * @author Roland Tömösközi (roland.toemoeskoezi@activesolution.at)
+ * Created on 31.05.2021
+ */
+@Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@Configuration
 public class GlobalSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;
@@ -81,10 +88,10 @@ public class GlobalSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/h2-console/**/**").permitAll()
 
                 .antMatchers("/auth/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/product/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/recipe/**").permitAll()
                 .antMatchers("/api/user/**").hasAuthority("ROLE_ADMIN")
-                .antMatchers(HttpMethod.POST, "/api/product/**").hasAuthority("ROLE_ADMIN")
-                .antMatchers(HttpMethod.PUT, "/api/product/**").hasAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.POST, "/api/recipe/**").hasAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.PUT, "/api/recipe/**").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/api/**").authenticated()
                 .anyRequest().permitAll();
 

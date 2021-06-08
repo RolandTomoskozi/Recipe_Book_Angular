@@ -80,11 +80,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- H2 Datenbank -->
+		<!-- H2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<version>1.4.198</version>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- Lombok -->
@@ -94,18 +95,6 @@
 			<version>1.18.20</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- Query DSL -->
-<!--		<dependency>-->
-<!--			<groupId>com.querydsl</groupId>-->
-<!--			<artifactId>querydsl-apt</artifactId>-->
-<!--			<version>${querydsl.version}</version>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>com.querydsl</groupId>-->
-<!--			<artifactId>querydsl-jpa</artifactId>-->
-<!--			<version>${querydsl.version}</version>-->
-<!--		</dependency>-->
 
 		<!-- Swagger -->
 		<dependency>

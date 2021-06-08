@@ -16,6 +16,9 @@ import java.util.Map;
 import java.util.function.Function;
 
 /**
+ * The JwtTokenUtil is responsible for performing JWT operations like creation and validation.It makes use of the
+ * io.jsonwebtoken.Jwts for achieving this.
+ *
  * @author Roland Tömösközi (roland.toemoeskoezi@activesolution.at)
  * Created on 02.06.2021
  */
