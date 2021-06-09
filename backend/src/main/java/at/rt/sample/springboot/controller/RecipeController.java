@@ -41,7 +41,7 @@ public class RecipeController {
         return recipeService.updateRecipe(id, newRecipe);
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/")
     public Page<RecipeModel> findAll(@PageableDefault Pageable pageable,
                                      @RequestParam("filter") Optional<String> filter) {
         return recipeService.findAll(pageable, filter);

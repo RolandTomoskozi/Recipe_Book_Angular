@@ -1,7 +1,6 @@
 package at.rt.sample.springboot.repo;
 
 import at.rt.sample.springboot.models.Ingredient;
-import at.rt.sample.springboot.models.Recipe;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,6 +12,6 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface IngredientsRepository extends JpaRepository<Ingredient, Long> {
 
-    @Query("select i from Ingredient i where LOWER(r.ingredientName) like concat('%', lower(?1), '%')")
+    @Query("select i from Ingredient i where LOWER(i.name) like concat('%', lower(?1), '%')")
     Page<Ingredient> findAllByFilter(String filter, Pageable pageable);
 }

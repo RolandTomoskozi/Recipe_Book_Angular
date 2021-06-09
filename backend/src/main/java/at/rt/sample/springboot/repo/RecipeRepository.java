@@ -12,6 +12,6 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
-    @Query("select r from Recipe r where LOWER(r.recipeName) like concat('%', lower(?1), '%')")
+    @Query("select r from Recipe r where LOWER(r.name) like concat('%', lower(?1), '%')")
     Page<Recipe> findAllByFilter(String filter, Pageable pageable);
 }

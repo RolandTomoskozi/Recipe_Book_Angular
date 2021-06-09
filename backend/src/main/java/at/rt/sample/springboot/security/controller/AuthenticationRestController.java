@@ -32,9 +32,6 @@ import java.util.Objects;
 @RestController
 public class AuthenticationRestController {
 
-    @Value("${jwt.header}")
-    private String tokenHeader;
-
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -44,6 +41,9 @@ public class AuthenticationRestController {
     @Autowired
     @Qualifier("jwtUserDetailsService")
     private UserDetailsService userDetailsService;
+
+    @Value("${jwt.header}")
+    private String tokenHeader;
 
     @PostMapping(value = "${jwt.route.authentication.path}")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest)
@@ -80,7 +80,7 @@ public class AuthenticationRestController {
     }
 
     /**
-     * Authenticates the user. If something is wrong, an {@link AuthenticationException} will be thrown
+     * Authenticates the user. If something is wrong, an {@link AuthenticationException} will be thrown.
      */
     private void authenticate(String username, String password) throws AuthenticationException {
         Objects.requireNonNull(username);

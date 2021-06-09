@@ -15,12 +15,11 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
 
-security:
-  jwt:
-    header: Authorization
-    secret: mySecret
-    expiration: 3600
-    route:
-      authentication:
-        path: /api/auth
-        refresh: /api/refresh
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 3600
+  route:
+    authentication:
+      path: /api/auth
+      refresh: /api/refresh

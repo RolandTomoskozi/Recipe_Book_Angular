@@ -43,6 +43,5 @@ public class Recipe extends BaseEntity<Long> {
             name = "ingredient_recipe",
             joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "ingredients_id"))
-    @JoinColumn(name = "ingredient_id")
     private Set<Ingredient> ingredients;
 }
